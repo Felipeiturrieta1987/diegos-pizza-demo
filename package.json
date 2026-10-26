@@ -1,0 +1,9 @@
+{
+  "name": "diegos-pizza-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Demo de pedidos online y panel del local para Diego's Pizza",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}
