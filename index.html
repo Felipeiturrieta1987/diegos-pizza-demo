@@ -266,6 +266,89 @@ details.done[open] summary svg{transform:rotate(90deg)}
 .modal h2{font-size:1.5rem;margin-bottom:14px}
 .mi{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);font-size:.93rem}
 
+
+/* ===== salón, cocina y caja ===== */
+.salon{position:relative;aspect-ratio:16/9;min-height:400px;border-radius:18px;border:1.5px solid var(--line);background:var(--soft);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:40px 40px;overflow:hidden}
+.salon.editing{outline:2px dashed var(--info);outline-offset:3px}
+.tt{position:absolute;width:19%;min-height:116px;display:grid;gap:3px;align-content:start;justify-items:start;text-align:left;padding:10px 12px;border-radius:16px;background:var(--card);border:2px solid var(--line);box-shadow:var(--shadow);touch-action:none;transition:transform .12s}
+.tt:hover{transform:translateY(-2px)}
+.tt .tn{font-family:var(--f-display);font-weight:800;font-size:1.15rem;line-height:1.1}
+.tt .ts{color:var(--muted);font-size:.8rem}
+.tt .tm{color:var(--muted);font-size:.8rem}
+.tt b.num{font-family:var(--f-display);font-size:1.15rem}
+.tt.libre{border-style:dashed}
+.tt.ocupada{border-color:var(--warn);background:color-mix(in srgb,var(--warn-bg) 55%,var(--card))}
+.tt.cobrar{border-color:var(--bad);background:color-mix(in srgb,var(--bad-bg) 60%,var(--card))}
+.tt.sel{outline:3px solid var(--info);outline-offset:2px}
+.tt .srv{background:var(--info);color:#fff;border-radius:99px;font-size:.72rem;font-weight:700;padding:3px 9px;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.6}}
+.salon.editing .tt{cursor:grab}
+.modal.wide{width:min(980px,calc(100% - 20px));padding:22px}
+.mh{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px}
+.mh h2{margin-bottom:6px}
+.mh .tags{display:flex;gap:6px;flex-wrap:wrap}
+.mtabs{display:none;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px;background:var(--soft);padding:4px;border-radius:14px;margin-bottom:14px}
+.mtabs button{min-height:44px;border-radius:11px;font-weight:600;color:var(--muted)}
+.mtabs button.on{background:var(--fg);color:var(--bg)}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.sh{font-family:var(--f-body);font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.rnd{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px;margin-bottom:10px}
+.rh{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:4px}
+.rh .btn{margin-left:auto}
+.ri{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:7px 0;border-top:1px dashed var(--line);font-size:.93rem}
+.ri em{font-style:normal;color:var(--muted)}.ri small{color:var(--warn)}
+.macts{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.macts .btn{flex:1;min-width:140px}
+.macts2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.inl{display:flex;gap:8px;margin-top:6px}.inl select{flex:1;min-width:0}
+.cmd{display:grid;gap:10px}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}
+.chip{padding:0 14px;min-height:40px;border-radius:99px;background:var(--soft);font-weight:600;white-space:nowrap}
+.chip.on{background:var(--fg);color:var(--bg)}
+.plist{display:grid;gap:6px;max-height:340px;overflow-y:auto;padding-right:2px}
+.pr{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:8px 10px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.pr.out{opacity:.5}
+.pr>div:first-child{min-width:0;font-weight:600}
+.pb{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.mini{min-height:44px;min-width:66px;padding:4px 10px;border-radius:10px;background:var(--green);color:var(--on-green);font-weight:700;display:grid;line-height:1.15;text-align:center;justify-items:center}
+.mini small{font-size:.68rem;font-weight:500;opacity:.85}
+.mini[disabled]{opacity:.4;cursor:not-allowed}
+.cartbox{background:var(--soft);border-radius:14px;padding:12px;display:grid;gap:8px}
+.line2{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:.93rem}
+.line2 em{font-style:normal;color:var(--muted)}
+.chk{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:10px 12px;background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:6px;cursor:pointer}
+.chk input{width:20px;height:20px;accent-color:var(--green-2)}
+.chk em{font-style:normal;color:var(--muted)}
+.rcp{background:var(--card);border:1.5px dashed var(--line);border-radius:14px;padding:16px;display:grid;gap:8px;margin-bottom:14px}
+.corte{margin-top:14px;padding:16px;border-radius:14px;background:var(--soft)}
+.corte h3{margin-bottom:10px}
+.corte .bad,.bad.num{color:var(--bad)}
+.kds{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;align-items:start}
+.ticket{background:var(--card);border:1px solid var(--line);border-top:6px solid var(--green-2);border-radius:14px;padding:14px;display:grid;gap:10px}
+.ticket.late{border-color:var(--bad);border-top-color:var(--bad);background:color-mix(in srgb,var(--bad-bg) 55%,var(--card))}
+.kh{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.kh b{font-family:var(--f-display);font-size:1.25rem;display:block}
+.kh span{color:var(--muted);font-size:.9rem}
+.kh .kt{font-weight:800;font-size:1.3rem;color:var(--fg)}
+.ticket.late .kt{color:var(--bad)}
+.ticket ul{list-style:none;margin:0;padding:10px 0;border-block:1px dashed var(--line);display:grid;gap:7px;font-size:1.02rem}
+.ticket li em{font-style:normal;color:var(--muted)}
+.ticket .stn{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:99px;background:var(--soft);font-size:.7rem;font-weight:600;color:var(--muted)}
+.ticket .nt{background:var(--warn-bg);color:var(--warn);border-radius:10px;padding:8px 10px;font-size:.9rem}
+.ticket .btn{min-height:50px}
+@media (max-width:860px){
+  .bnav{grid-template-columns:repeat(5,1fr)}
+  .mtabs{display:grid}
+  .mgrid{grid-template-columns:1fr}
+  .mhid{display:none}
+  .modal.wide{width:calc(100% - 12px);max-height:calc(100% - 12px);padding:16px}
+}
+@media (max-width:760px){
+  .salon{aspect-ratio:auto;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:10px;background-image:none}
+  .tt{position:static;width:auto;left:auto!important;top:auto!important}
+  .macts2{grid-template-columns:1fr}
+  .salon.editing{outline:none}
+}
 @media (max-width:1100px){
   .board{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
@@ -365,7 +448,10 @@ const ICONS={
  volx:'<path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="m22 9-6 6M16 9l6 6"/>',
  copy:'<rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>',
  undo:'<path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-15-6.7L3 13"/>',
- ext:'<path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>'
+ ext:'<path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
+ table:'<rect x="3" y="5" width="18" height="6" rx="2"/><path d="M6 11v8M18 11v8M9 19h-6M21 19h-6"/>',
+ flame:'<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4.1 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.4 1-3 0 1.4.9 2.5 2.5 2.5Z"/>',
+ cash:'<rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/>'
 };
 const ico=n=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n]||''}</svg>`;
 const hydrateIcons=(r=document)=>$$('svg[data-i]',r).forEach(s=>{s.innerHTML=ICONS[s.dataset.i]||'';s.classList.add('i');s.removeAttribute('data-i');s.setAttribute('aria-hidden','true')});
@@ -432,14 +518,20 @@ const PAY={efectivo:'Efectivo',transferencia:'Transferencia',local:'Pago en loca
 const DRIVERS=['Matías','Camila','Joaquín'];
 const BANK=[['Banco','Banco Estado (dato de ejemplo)'],['Tipo de cuenta','Cuenta Vista'],['N° de cuenta','000 000 000'],['RUT','76.000.000-0'],['Nombre','Diegos Pizza SpA'],['Correo','pagos@diegospizza.cl']];
 const WA='56900000000';const DEMO_MAIL='admin@diegospizza.cl',DEMO_PASS='diegos2026';
-const DEF_SET={open:true,fee:2000,eta:'30–40 min',unavail:[]};
+const DEF_TABLES=[2,2,4,4,4,4,6,6].map((seats,i)=>({id:'t'+(i+1),name:'Mesa '+(i+1),seats,x:[5,28,51,74][i%4],y:i<4?10:52}));
+const DEF_SET={open:true,fee:2000,eta:'30–40 min',unavail:[],tables:DEF_TABLES,waiters:['Valentina','Rodrigo','Sofía'],kdsLate:15,shift:{open:false,openedAt:0,fondo:0,by:''},shifts:[]};
 
 function mkItem(id,v,qty){const it=ALL[id];let price,variant;if(it.kind==='pizza'){const idx=SIZES.findIndex(s=>s.k===v);price=it.prices[idx];variant=`${sizeName(v).n} ${sizeName(v).cm}`}else{price=it.price;variant=v||''}return{key:id+'|'+(v||''),id,name:it.name,variant,v:v||'',qty,price}}
 function seeds(){
  const now=Date.now(),m=x=>now-x*60000;
  const mk=(num,min,status,type,name,phone,addr,pay,items,extra={})=>{const its=items.map(([id,v,q])=>mkItem(id,v,q));const sub=its.reduce((a,i)=>a+i.price*i.qty,0);const fee=type==='delivery'?2000:0;
   return{id:'seed'+num,num,createdAt:m(min),status,type,name,phone,address:addr,notes:extra.notes||'',pay,cashFrom:extra.cashFrom||null,paid:!!extra.paid,items:its,subtotal:sub,fee,total:sub+fee,driver:extra.driver||null,source:'web',demo:true,history:[{s:'nuevo',t:m(min)}]}};
+ const mm=(id,min,table,guests,waiter,status,rows)=>{const t=m(min);const its=rows.map(([pid,v,q,rid,sentMin,ready,served],k)=>({...mkItem(pid,v,q),iid:id+'i'+k,rid,station:ALL[pid].kind==='sand'?'sanguches':'pizzas',sentAt:m(sentMin),ready:!!ready,served:!!served,note:''}));
+  return{id,num:0,createdAt:t,openedAt:t,status,type:'mesa',kind:'mesa',label:'',table,guests,waiter,items:its,payments:[],rounds:Math.max(...rows.map(r=>r[3])),name:'',phone:'',address:'',notes:'',pay:'',driver:null,paid:false,subtotal:0,fee:0,total:0,source:'panel',demo:true,history:[{s:'abierta',t}]}};
  return[
+  mm('seedm2',38,'t2',3,'Valentina','abierta',[['napoletana','med',1,1,35,1,1],['tradicional','Mechada',2,1,35,1,1],['pepperoni','fam',1,2,8,1,0]]),
+  mm('seedm5',70,'t5',4,'Rodrigo','porcobrar',[['carnivora','fam',1,1,66,1,1],['pollo-bbq','med',1,1,66,1,1],['despiadada','',2,1,66,1,1]]),
+  mm('seedm7',22,'t7',2,'Sofía','abierta',[['mar-tierra','fam',1,1,21,0,0],['diegos-sand','',2,1,21,0,0]]),
   mk(101,2,'nuevo','delivery','Camila Rojas','+56 9 5555 0101','Arturo Prat 215, Huépil','transferencia',[['mar-tierra','fam',1],['pepperoni','ind',1]],{notes:'Tocar el citófono, por favor.'}),
   mk(100,6,'nuevo','retiro','Diego Fuentes','+56 9 5555 0102','','local',[['despiadada','',2],['pollo-bravo','',1]]),
   mk(99,17,'preparacion','delivery','Valentina Soto','+56 9 5555 0103','Av. Bernardo O’Higgins 340, Huépil','efectivo',[['carnivora','med',1],['napoletana','med',1]],{cashFrom:30000,notes:'Sin aceitunas en la Napoletana.'}),
@@ -491,11 +583,11 @@ const Store=(()=>{
    }catch(e){if(!this.token){orders=[];emitO()}}
   },
   init(){if(!this.token)window.dispatchEvent(new Event('dp-401'));this.pull();try{const es=new EventSource('/api/stream');es.onmessage=()=>this.pull()}catch(e){}setInterval(()=>this.pull(),10000)},
-  async save(o){const s=await this.api('POST','/api/orders',o);orders=[s,...orders.filter(x=>x.id!==s.id)];emitO();return s},
-  async patch(id,p){await this.api('PATCH','/api/orders/'+id,p);await this.pull()},
+  async save(o){const s=o.type==='mesa'?await this.api('PUT','/api/orders/'+o.id,o):await this.api('POST','/api/orders',o);orders=[s,...orders.filter(x=>x.id!==s.id)];emitO();return s},
+  async patch(id,p){const o=orders.find(x=>x.id===id);if(o&&o.type==='mesa')await this.api('PUT','/api/orders/'+id,{...o,...p});else await this.api('PATCH','/api/orders/'+id,p);await this.pull()},
   async setSettings(p){await this.api('PUT','/api/settings',p);await this.pull()},
-  async reset(){await this.api('POST','/api/reset',{orders:seeds()});await this.pull()},
-  async login(m,p){try{const r=await fetch('/api/login',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({email:m,pass:p})});if(!r.ok)return false;const t=(await r.json()).token;this.token=t;SS.set('dp.token',t);await this.pull();if(!this.init_)await this.api('POST','/api/seed',{orders:seeds()}).catch(()=>{});await this.pull();return true}catch(e){return false}}
+  async reset(){await this.api('POST','/api/reset',{orders:seeds(),settings:DEF_SET});await this.pull()},
+  async login(m,p){try{const r=await fetch('/api/login',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({email:m,pass:p})});if(!r.ok)return false;const t=(await r.json()).token;this.token=t;SS.set('dp.token',t);await this.pull();if(!this.init_)await this.api('POST','/api/seed',{orders:seeds(),settings:DEF_SET}).catch(()=>{});await this.pull();return true}catch(e){return false}}
  };
  let impl=L;
  (async()=>{
@@ -632,7 +724,7 @@ let spyT;window.addEventListener('scroll',()=>{if($('#site').hidden)return;clear
    PANEL DEL LOCAL
    ===================================================== */
 const PS={auth:SS.get('dp.auth')==='1',nav:'pedidos',tab:'nuevo',more:false,sound:false,seen:null,fresh:new Set(),pick:{},rep:'despachar'};
-const NAV=[['pedidos','Pedidos','receipt'],['reparto','Reparto','truck'],['menu','Menú','utensils'],['clientes','Clientes','users'],['reportes','Reportes','chart'],['repartidores','Repartidores','user'],['local','Mi local','store']];
+const NAV=[['pedidos','Pedidos','receipt'],['mesas','Mesas','table'],['cocina','Cocina','flame'],['cobros','Cobros','cash'],['reparto','Reparto','truck'],['menu','Menú','utensils'],['clientes','Clientes','users'],['reportes','Reportes','chart'],['repartidores','Repartidores','user'],['local','Mi local','store']];
 const OPEN=['nuevo','preparacion','listo','camino'];
 const NEXT={nuevo:'preparacion',preparacion:'listo',listo:'camino',camino:'entregado'};
 const PREV={preparacion:'nuevo',listo:'preparacion',camino:'listo',entregado:'camino'};
@@ -641,8 +733,8 @@ const nextStatus=o=>o.status==='listo'&&o.type==='retiro'?'entregado':NEXT[o.sta
 const prevStatus=o=>o.status==='entregado'?(o.type==='retiro'?'listo':'camino'):PREV[o.status];
 const busyDrivers=()=>new Set(Store.orders.filter(o=>o.status==='camino'&&o.driver).map(o=>o.driver));
 const freeDrivers=()=>{const b=busyDrivers();return DRIVERS.filter(d=>!b.has(d))};
-const todays=()=>Store.orders.filter(o=>sameDay(o.createdAt));
-async function move(id,status,extra={}){const o=Store.orders.find(x=>x.id===id);if(!o)return;const history=[...(o.history||[]),{s:status,t:Date.now()}];await Store.patch(id,{status,history,...extra})}
+const todays=()=>web().filter(o=>sameDay(o.createdAt));
+async function move(id,status,extra={}){const o=Store.orders.find(x=>x.id===id);if(!o)return;if(status==='preparacion'&&!extra.items&&(o.items||[]).some(i=>i.ready))extra={...extra,items:o.items.map(i=>({...i,ready:false}))};const history=[...(o.history||[]),{s:status,t:Date.now()}];await Store.patch(id,{status,history,...extra})}
 
 function beep(){try{const A=window.AudioContext||window.webkitAudioContext,c=new A();[880,1175,880].forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain();o.frequency.value=f;o.type='sine';g.gain.setValueAtTime(.0001,c.currentTime+i*.18);g.gain.exponentialRampToValueAtTime(.25,c.currentTime+i*.18+.02);g.gain.exponentialRampToValueAtTime(.0001,c.currentTime+i*.18+.16);o.connect(g).connect(c.destination);o.start(c.currentTime+i*.18);o.stop(c.currentTime+i*.18+.18)})}catch(e){}}
 
@@ -654,20 +746,21 @@ function renderPanel(){
   <p class="err" id="lerr" role="alert"></p><button class="btn" type="submit">Ingresar</button>
   <div class="hintbox"><b>Acceso de demostración</b><span>Correo: <b>admin@diegospizza.cl</b></span><span>Contraseña: <b>diegos2026</b></span><button type="button" class="btn ghost sm" id="fillDemo">Usar datos demo</button></div>
   <a class="lnk" style="text-align:center;cursor:pointer" id="toSite">Volver al sitio</a></form></div>`;return}
- const open=Store.orders.filter(o=>OPEN.includes(o.status)),cnt=s=>Store.orders.filter(o=>o.status===s).length;
- const items=NAV.map(([k,n,i])=>`<button class="nv ${PS.nav===k?'on':''}" data-nav="${k}">${ico(i)}${n}${k==='pedidos'&&cnt('nuevo')?`<span class="bd">${cnt('nuevo')}</span>`:''}</button>`).join('');
+ const bd=k=>k==='pedidos'?web().filter(o=>o.status==='nuevo').length:k==='mesas'?mesas().filter(o=>OPENACC.includes(o.status)).reduce((a,o)=>a+toServe(o).length,0):k==='cocina'?kdsTickets('').length:k==='cobros'?mesas().filter(o=>o.status==='porcobrar').length:0;
+ const bdh=k=>bd(k)?`<span class="bd">${bd(k)}</span>`:'';
+ const items=NAV.map(([k,n,i])=>`<button class="nv ${PS.nav===k?'on':''}" data-nav="${k}">${ico(i)}${n}${bdh(k)}</button>`).join('');
  root.innerHTML=`<div class="shell">
   <aside class="side"><div class="brand"><img src="${LOGO}" alt=""><div><b>Diego's Pizza</b><small>Panel del local</small></div></div>${items}<div class="sp"></div>
    <button class="nv" id="toSite">${ico('ext')}Ver sitio</button><button class="nv" id="logout">${ico('logout')}Salir</button></aside>
   <div class="main"><div class="mtop"><div class="wrap"><img src="${LOGO}" alt=""><b>Diego's Pizza</b></div></div>
    <div class="wrap page" id="pview"></div></div></div>
-  <nav class="bnav" aria-label="Secciones">${[['pedidos','Pedidos','receipt'],['reparto','Reparto','truck'],['menu','Menú','utensils']].map(([k,n,i])=>`<button data-nav="${k}" class="${PS.nav===k?'on':''}">${ico(i)}${n}${k==='pedidos'&&cnt('nuevo')?`<span class="bd">${cnt('nuevo')}</span>`:''}</button>`).join('')}<button id="openMore" class="${['clientes','reportes','repartidores','local'].includes(PS.nav)?'on':''}">${ico('more')}Más</button></nav>`;
+  <nav class="bnav" aria-label="Secciones">${[['pedidos','Pedidos','receipt'],['mesas','Mesas','table'],['cocina','Cocina','flame'],['cobros','Cobros','cash']].map(([k,n,i])=>`<button data-nav="${k}" class="${PS.nav===k?'on':''}">${ico(i)}${n}${bdh(k)}</button>`).join('')}<button id="openMore" class="${['reparto','menu','clientes','reportes','repartidores','local'].includes(PS.nav)?'on':''}">${ico('more')}Más</button></nav>`;
  renderView();
 }
 function live(){return`<span class="dot"></span> En vivo · ${Store.backend==='shared'?'compartido':'este navegador'}`}
 function renderView(){
  const v=$('#pview');if(!v)return;
- const fn={pedidos:vPedidos,reparto:vReparto,menu:vMenu,clientes:vClientes,reportes:vReportes,repartidores:vRepartidores,local:vLocal}[PS.nav]||vPedidos;
+ const fn={pedidos:vPedidos,mesas:vMesas,cocina:vCocina,cobros:vCobros,reparto:vReparto,menu:vMenu,clientes:vClientes,reportes:vReportes,repartidores:vRepartidores,local:vLocal}[PS.nav]||vPedidos;
  v.innerHTML=fn();
 }
 const dateTxt=()=>new Date().toLocaleDateString('es-CL',{weekday:'long',day:'numeric',month:'long'}).replace(/^./,c=>c.toUpperCase());
@@ -690,18 +783,18 @@ function orderCard(o){
   </div></article>`;
 }
 function vPedidos(){
- const by=s=>Store.orders.filter(o=>o.status===s),open=Store.orders.filter(o=>OPEN.includes(o.status));
+ const by=s=>web().filter(o=>o.status===s),open=web().filter(o=>OPEN.includes(o.status));
  const cols=[['nuevo','Nuevos'],['preparacion','En preparación'],['listo','Listos'],['camino','En camino']];
  const done=todays().filter(o=>['entregado','cancelado'].includes(o.status)).sort((a,b)=>b.createdAt-a.createdAt);
  return`<div class="ph"><div><h1>Pedidos</h1><div class="meta"><span>${dateTxt()}</span><span>${live()}</span></div></div><div class="acts"><button class="sq" id="snd" aria-label="${PS.sound?'Silenciar avisos':'Activar sonido'}" title="Sonido de nuevos pedidos">${ico(PS.sound?'vol':'volx')}</button><button class="sq dark" id="newOrder" aria-label="Crear pedido manual" title="Pedido telefónico">${ico('plus')}</button></div></div>
  <div class="pills"><span>${open.length?`${open.length} pedido${open.length>1?'s':''} abierto${open.length>1?'s':''}`:'Sin pedidos abiertos'}</span>${cols.map(([k,n])=>`<span>· ${n}<b class="num">${by(k).length}</b></span>`).join('')}</div>
- ${Store.orders.length===0?`<div class="empty"><div class="circ">${ico('bell')}</div><b>Todavía no hay pedidos hoy</b><span>Cuando llegue uno aparece aquí; activa el sonido para oírlo desde la cocina.</span></div>`:''}
+ ${web().length===0?`<div class="empty"><div class="circ">${ico('bell')}</div><b>Todavía no hay pedidos hoy</b><span>Cuando llegue uno aparece aquí; activa el sonido para oírlo desde la cocina.</span></div>`:''}
  <div class="tabs" role="tablist">${cols.map(([k,n])=>`<button role="tab" data-tab="${k}" class="${PS.tab===k?'on':''}"><b class="num">${by(k).length}</b>${n==='En preparación'?'Preparando':n}</button>`).join('')}</div>
  <div class="board">${cols.map(([k,n])=>`<section class="colm ${PS.tab===k?'act':''}"><h3><span>${n}</span><span class="num">${by(k).length}</span></h3>${by(k).length?by(k).slice().sort((a,b)=>a.createdAt-b.createdAt).map(orderCard).join(''):`<div class="empty"><span>Sin pedidos en "${n.toLowerCase()}"</span></div>`}</section>`).join('')}</div>
  <details class="done" ${PS.doneOpen?'open':''}><summary>${ico('chev')}Entregados y cancelados hoy <span>${done.length?done.length+' pedidos':'Ninguno todavía'}</span></summary>${done.map(o=>`<div class="drow"><b>#${o.num}</b><span>${esc(o.name)} · ${hhmm(o.createdAt)}</span><span class="tag ${o.status==='entregado'?'ok':'bad'}">${STATUS[o.status]}</span><b class="num">${CLP(o.total)}</b></div>`).join('')}</details>`;
 }
 function vReparto(){
- const del=Store.orders.filter(o=>o.type==='delivery'),listos=del.filter(o=>o.status==='listo'),camino=del.filter(o=>o.status==='camino');
+ const del=web().filter(o=>o.type==='delivery'),listos=del.filter(o=>o.status==='listo'),camino=del.filter(o=>o.status==='camino');
  const atras=del.filter(o=>OPEN.includes(o.status)&&Date.now()-o.createdAt>45*60000).length,libres=freeDrivers();
  const list=PS.rep==='despachar'?listos:camino;
  return`<div class="ph"><div><h1>Reparto</h1><div class="meta"><span>${dateTxt()}</span><span>${live()}</span></div></div></div>
@@ -718,21 +811,25 @@ function vMenu(){
  ${MENU.map(s=>`<div class="grp">${esc(s.title)}</div><div class="panelbox" style="padding-block:4px">${s.items.map(i=>`<div class="mrow"><div><h4>${esc(i.name)}</h4><small class="num">${i.kind==='pizza'?i.prices.map(CLP).join(' · '):CLP(i.price)}</small></div><button class="sw ${un.has(i.id)?'':'on'}" role="switch" aria-checked="${!un.has(i.id)}" aria-label="${esc(i.name)} disponible" data-av="${i.id}"></button></div>`).join('')}</div>`).join('')}`;
 }
 function vClientes(){
- const m=new Map();Store.orders.filter(o=>o.status!=='cancelado').forEach(o=>{const k=o.phone.replace(/\D/g,'')||o.name;const c=m.get(k)||{name:o.name,phone:o.phone,n:0,tot:0,last:0};c.n++;c.tot+=o.total;c.last=Math.max(c.last,o.createdAt);m.set(k,c)});
+ const m=new Map();web().filter(o=>o.status!=='cancelado').forEach(o=>{const k=o.phone.replace(/\D/g,'')||o.name;const c=m.get(k)||{name:o.name,phone:o.phone,n:0,tot:0,last:0};c.n++;c.tot+=o.total;c.last=Math.max(c.last,o.createdAt);m.set(k,c)});
  const rows=[...m.values()].sort((a,b)=>b.last-a.last);
  return`<div class="ph"><div><h1>Clientes</h1><div class="meta"><span>${rows.length} clientes con pedidos</span></div></div></div><div class="panelbox scroll-x"><table class="tbl"><thead><tr><th>Cliente</th><th>Teléfono</th><th class="r">Pedidos</th><th class="r">Total</th><th>Último</th></tr></thead><tbody>${rows.map(c=>`<tr><td><b>${esc(c.name)}</b></td><td>${esc(c.phone)}</td><td class="r num">${c.n}</td><td class="r num">${CLP(c.tot)}</td><td>${ago(c.last)}</td></tr>`).join('')||'<tr><td colspan="5" style="color:var(--muted)">Aún no hay clientes.</td></tr>'}</tbody></table></div>`;
 }
 function vReportes(){
- const t=todays().filter(o=>o.status!=='cancelado'),ent=t.filter(o=>o.status==='entregado'),tot=t.reduce((a,o)=>a+o.total,0);
- const byPay=['efectivo','transferencia','local'].map(k=>[PAY[k],t.filter(o=>o.pay===k).reduce((a,o)=>a+o.total,0)]);
- const maxP=Math.max(1,...byPay.map(x=>x[1]));
- const prod=new Map();t.forEach(o=>o.items.forEach(i=>prod.set(i.name,(prod.get(i.name)||0)+i.qty)));
+ const rows=salesIn(startOfDay(),Date.now()),tot=sumBy(rows,r=>r.amount),tips=sumBy(rows,r=>r.tip);
+ const t=todays().filter(o=>o.status!=='cancelado'),mesasHoy=mesas().filter(o=>o.status==='pagada'&&sameDay(o.closedAt||o.createdAt));
+ const chs=['Mesa','Mostrador','Delivery','Retiro'].map(k=>[k,sumBy(rows.filter(r=>r.ch===k),r=>r.amount),rows.filter(r=>r.ch===k).length]);
+ const meths=['efectivo','tarjeta','transferencia','local'].map(k=>[PAYM[k],sumBy(rows.filter(r=>r.method===k),r=>r.amount)]);
+ const maxC=Math.max(1,...chs.map(x=>x[1])),maxP=Math.max(1,...meths.map(x=>x[1]));
+ const prod=new Map();[...t,...mesasHoy].forEach(o=>litems(o).forEach(i=>prod.set(i.name,(prod.get(i.name)||0)+i.qty)));
  const top=[...prod.entries()].sort((a,b)=>b[1]-a[1]).slice(0,6),maxT=Math.max(1,...top.map(x=>x[1]));
+ const n=rows.length;
  return`<div class="ph"><div><h1>Reportes</h1><div class="meta"><span>Hoy · ${dateTxt()}</span></div></div></div>
- <div class="stats"><div class="st"><div class="k">Ventas del día</div><div class="v num">${CLP(tot)}</div><div class="s">${t.length} pedidos (sin cancelados)</div></div><div class="st"><div class="k">Ticket promedio</div><div class="v num">${CLP(t.length?tot/t.length:0)}</div><div class="s">por pedido</div></div><div class="st"><div class="k">Entregados</div><div class="v num">${ent.length}</div><div class="s">${t.length-ent.length} en curso</div></div><div class="st"><div class="k">Delivery / Retiro</div><div class="v num">${t.filter(o=>o.type==='delivery').length} / ${t.filter(o=>o.type==='retiro').length}</div><div class="s">pedidos de hoy</div></div></div>
- <div class="panelbox"><h3>Ventas por forma de pago</h3>${byPay.map(([n,v])=>`<div class="bar"><span>${n}</span><i><u style="width:${v/maxP*100}%"></u></i><b class="num">${CLP(v)}</b></div>`).join('')}</div>
- <div class="panelbox"><h3>Productos más pedidos</h3>${top.length?top.map(([n,q])=>`<div class="bar"><span>${esc(n)}</span><i><u style="width:${q/maxT*100}%"></u></i><b class="num">${q}</b></div>`).join(''):'<span style="color:var(--muted)">Sin ventas hoy.</span>'}</div>
- <p style="color:var(--muted);font-size:.85rem">Cifras calculadas con los pedidos de hoy, incluidos los de ejemplo del demo.</p>`;
+ <div class="stats"><div class="st"><div class="k">Ventas cobradas hoy</div><div class="v num">${CLP(tot)}</div><div class="s">${n} cobros (salón, mostrador y pedidos entregados)</div></div><div class="st"><div class="k">Ticket promedio</div><div class="v num">${CLP(n?tot/n:0)}</div><div class="s">por cobro</div></div><div class="st"><div class="k">Propinas</div><div class="v num">${CLP(tips)}</div><div class="s">aparte de las ventas</div></div><div class="st"><div class="k">Mesas / Delivery / Retiro</div><div class="v num" style="font-size:1.5rem">${mesasHoy.filter(o=>o.kind!=='mostrador').length} / ${t.filter(o=>o.type==='delivery').length} / ${t.filter(o=>o.type==='retiro').length}</div><div class="s">cuentas y pedidos de hoy</div></div></div>
+ <div class="panelbox"><h3>Ventas por canal</h3>${chs.map(([k,v,c])=>`<div class="bar"><span>${k} · ${c}</span><i><u style="width:${v/maxC*100}%"></u></i><b class="num">${CLP(v)}</b></div>`).join('')}</div>
+ <div class="panelbox"><h3>Ventas por forma de pago</h3>${meths.map(([k,v])=>`<div class="bar"><span>${k}</span><i><u style="width:${v/maxP*100}%"></u></i><b class="num">${CLP(v)}</b></div>`).join('')}</div>
+ <div class="panelbox"><h3>Productos más pedidos</h3>${top.length?top.map(([k,q])=>`<div class="bar"><span>${esc(k)}</span><i><u style="width:${q/maxT*100}%"></u></i><b class="num">${q}</b></div>`).join(''):'<span style="color:var(--muted)">Sin ventas hoy.</span>'}</div>
+ <p style="color:var(--muted);font-size:.85rem">Se cuenta lo cobrado hoy: pagos de mesas y mostrador, y pedidos web entregados. Incluye los datos de ejemplo del demo.</p>`;
 }
 function vRepartidores(){
  const b=busyDrivers();
@@ -744,6 +841,8 @@ function vLocal(){
  <div class="panelbox"><div class="mrow"><div><h4>Recibiendo pedidos</h4><small>Si lo apagas, el sitio muestra "Cerrado" y bloquea el envío.</small></div><button class="sw ${s.open?'on':''}" role="switch" aria-checked="${s.open}" aria-label="Recibiendo pedidos" data-open></button></div>
  <div class="mrow"><div><h4>Costo de despacho</h4><small>Valor referencial del demo.</small></div><input class="inp" style="width:130px" id="s-fee" inputmode="numeric" value="${s.fee}" aria-label="Costo de despacho"></div>
  <div class="mrow"><div><h4>Tiempo estimado</h4><small>Se muestra en el sitio y al confirmar.</small></div><input class="inp" style="width:130px" id="s-eta" value="${esc(s.eta)}" aria-label="Tiempo estimado"></div></div>
+ <div class="panelbox"><h3>Salón y cocina</h3><div class="mrow"><div><h4>Alerta de comanda atrasada</h4><small>La comanda se pone roja en Cocina pasados estos minutos.</small></div><input class="inp" style="width:130px" id="s-kds" inputmode="numeric" value="${s.kdsLate||15}" aria-label="Minutos para alerta"></div>
+ <div class="mrow"><div><h4>Meseros</h4><small>Separados por coma. Se eligen al abrir una mesa.</small></div><input class="inp" style="width:min(300px,50%)" id="s-waiters" value="${esc(waiters().join(', '))}" aria-label="Meseros"></div></div>
  <div class="panelbox"><h3>Datos del local</h3><div class="mrow"><div><h4>Dirección</h4><small>Diego Portales 161, Huépil</small></div></div><div class="mrow"><div><h4>Horario</h4><small>Lunes a jueves 16:00 a 21:00 · Viernes a domingo 16:00 a 22:00</small></div></div></div>
  <div class="panelbox"><h3>Demo</h3><p style="color:var(--muted);margin-bottom:12px">Restablece los pedidos de ejemplo y la configuración inicial.</p><button class="btn ghost sm" id="resetDemo">Restablecer datos demo</button></div>`;
 }
@@ -769,7 +868,7 @@ function newOrderModal(){
 }
 function moreSheet(){
  $('#overlay').innerHTML=`<div class="scrim" id="mscrim"></div><div class="sheet" role="dialog" aria-label="Más opciones"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><div><b style="font-family:var(--f-display);font-size:1.25rem">Dueño Diego's Pizza</b><br><span style="color:var(--muted)">Administrador · Diego's Pizza</span></div><button class="icon-btn" id="mclose" aria-label="Cerrar">${ico('x')}</button></div>
- ${[['clientes','Clientes','users'],['reportes','Reportes','chart'],['repartidores','Repartidores','user'],['local','Mi local','store']].map(([k,n,i])=>`<button class="nv" data-nav="${k}">${ico(i)}${n}</button>`).join('')}
+ ${[['reparto','Reparto','truck'],['menu','Menú','utensils'],['clientes','Clientes','users'],['reportes','Reportes','chart'],['repartidores','Repartidores','user'],['local','Mi local','store']].map(([k,n,i])=>`<button class="nv" data-nav="${k}">${ico(i)}${n}</button>`).join('')}
  <button class="nv" id="toSite">${ico('ext')}Ver sitio</button><button class="nv" id="logout">${ico('logout')}Salir</button></div>`;
  $('#mscrim').onclick=$('#mclose').onclick=()=>$('#overlay').innerHTML='';
 }
@@ -805,8 +904,383 @@ document.addEventListener('submit',e=>{
   Store.login(m,p).then(ok=>{if(ok){SS.set('dp.auth','1');PS.auth=true;renderPanel()}else{const er=$('#lerr');if(er)er.textContent='Correo o contraseña incorrectos.'}})}
 });
 
+/* =====================================================
+   SALÓN · COCINA · CAJA
+   ===================================================== */
+const MS={open:false,tid:null,aid:null,tab:'cuenta',cat:'clasicas',cart:[],note:'',view:'cuenta',pay:null,edit:false,etid:null,form:{guests:2,waiter:''},prot:{},mv:'',jn:'',kds:'',corte:false,counted:'',cnote:'',fondo:'',justDragged:false};
+const PAYM={efectivo:'Efectivo',tarjeta:'Tarjeta',transferencia:'Transferencia',local:'Pago en local'};
+const OPENACC=['abierta','porcobrar'];
+const mesas=()=>Store.orders.filter(o=>o.type==='mesa');
+const web=()=>Store.orders.filter(o=>o.type!=='mesa');
+const tables=()=>Store.settings.tables||[];
+const tname=id=>{const t=tables().find(x=>x.id===id);return t?t.name:(id||'')};
+const waiters=()=>(Store.settings.waiters&&Store.settings.waiters.length)?Store.settings.waiters:DEF_SET.waiters;
+const acctOf=tid=>mesas().find(o=>o.table===tid&&OPENACC.includes(o.status));
+const litems=o=>(o.items||[]).filter(i=>!i.voided);
+const accTotal=o=>litems(o).reduce((a,i)=>a+i.price*i.qty,0);
+const accPaid=o=>(o.payments||[]).reduce((a,p)=>a+p.amount,0);
+const accDue=o=>Math.max(0,accTotal(o)-accPaid(o));
+const stOf=i=>i.station||((ALL[i.id]&&ALL[i.id].kind==='sand')?'sanguches':'pizzas');
+const STN={pizzas:'Pizzas',sanguches:'Sánguches'};
+const lateMin=()=>Store.settings.kdsLate||15;
+const mins=t=>Math.max(0,Math.floor((Date.now()-t)/60000));
+const srcName=o=>o.kind==='mostrador'?(o.label||'Mostrador'):tname(o.table);
+const roundsOf=o=>{const m=new Map();litems(o).forEach(i=>{const r=i.rid||1;if(!m.has(r))m.set(r,[]);m.get(r).push(i)});return[...m.entries()].sort((a,b)=>a[0]-b[0])};
+const toServe=o=>roundsOf(o).filter(([r,its])=>its.every(i=>i.ready)&&!its.every(i=>i.served)).map(x=>x[0]);
+const deliveredAt=o=>{const h=(o.history||[]).slice().reverse().find(x=>x.s==='entregado');return h?h.t:o.createdAt};
+const prepStart=o=>{const h=(o.history||[]).slice().reverse().find(x=>x.s==='preparacion');return h?h.t:o.createdAt};
+const startOfDay=()=>{const d=new Date();d.setHours(0,0,0,0);return d.getTime()};
+const uid=p=>p+Date.now().toString(36)+Math.random().toString(36).slice(2,5);
+
+function salesIn(from,to){
+ const rows=[];
+ mesas().forEach(o=>(o.payments||[]).forEach(p=>{if(p.t>=from&&p.t<=to)rows.push({t:p.t,ch:o.kind==='mostrador'?'Mostrador':'Mesa',label:srcName(o),method:p.method,amount:p.amount,tip:p.tip||0})}));
+ web().filter(o=>o.status==='entregado').forEach(o=>{const t=deliveredAt(o);if(t>=from&&t<=to)rows.push({t,ch:o.type==='delivery'?'Delivery':'Retiro',label:'Pedido #'+o.num,method:o.pay,amount:o.total,tip:0})});
+ return rows.sort((a,b)=>b.t-a.t);
+}
+const sumBy=(rows,f)=>rows.reduce((a,r)=>a+f(r),0);
+
+/* ---------- acciones sobre cuentas ---------- */
+async function openAccount(tid,guests,waiter,kind){
+ const t=Date.now();
+ let label='';
+ if(kind==='mostrador'){const n=mesas().filter(o=>o.kind==='mostrador'&&sameDay(o.openedAt||o.createdAt)).length+1;label='Mostrador #'+n}
+ const o={id:uid('m'),num:0,createdAt:t,openedAt:t,status:'abierta',type:'mesa',kind:kind||'mesa',label,table:kind==='mostrador'?null:tid,guests:guests||1,waiter:waiter||waiters()[0],items:[],payments:[],rounds:0,name:'',phone:'',address:'',notes:'',pay:'',driver:null,paid:false,subtotal:0,fee:0,total:0,source:'panel',history:[{s:'abierta',t}]};
+ await Store.save(o);return o;
+}
+async function sendRound(o){
+ if(!MS.cart.length)return;
+ const rid=(o.rounds||0)+1,t=Date.now();
+ const add=MS.cart.map(c=>({key:c.key,id:c.id,name:c.name,variant:c.variant,v:c.v,qty:c.qty,price:c.price,rid,station:stOf(c),sentAt:t,ready:false,served:false,note:MS.note.trim()}));
+ MS.cart=[];MS.note='';MS.tab='cuenta';
+ await Store.patch(o.id,{items:[...(o.items||[]),...add],rounds:rid});
+ toast(`Ronda ${rid} enviada a cocina`);
+}
+async function kdsDone(key,station){
+ const [oid,rid]=key.split('|');const o=Store.orders.find(x=>x.id===oid);if(!o)return;
+ const t=Date.now();
+ const items=(o.items||[]).map(i=>{
+  if(i.voided||i.ready)return i;
+  if(o.type==='mesa'&&String(i.rid||1)!==String(rid))return i;
+  if(station&&stOf(i)!==station)return i;
+  return{...i,ready:true,readyAt:t};
+ });
+ if(o.type!=='mesa'&&items.filter(i=>!i.voided).every(i=>i.ready)){await move(o.id,'listo',{items});toast(`#${o.num} listo en cocina`);return}
+ await Store.patch(o.id,{items});
+}
+async function serveRound(o,rid){await Store.patch(o.id,{items:o.items.map(i=>(i.rid||1)===rid?{...i,served:true}:i)})}
+async function voidItem(o,idx){await Store.patch(o.id,{items:o.items.map((i,k)=>k===idx?{...i,voided:true}:i)})}
+async function mergeInto(o,other){
+ const off=o.rounds||0;
+ const items=[...(o.items||[]),...(other.items||[]).map(i=>({...i,rid:(i.rid||1)+off}))];
+ await Store.patch(o.id,{items,rounds:off+(other.rounds||0),guests:(o.guests||0)+(other.guests||0),payments:[...(o.payments||[]),...(other.payments||[])]});
+ await Store.patch(other.id,{status:'unida',mergedInto:o.id,closedAt:Date.now()});
+}
+async function registerPayment(o){
+ const P=MS.pay,due=accDue(o);
+ const amount=Math.min(due,payAmount(o));if(amount<=0)return'Ingresa un monto a cobrar.';
+ if(P.doc==='factura'&&(!P.rut.trim()||!P.razon.trim()))return'Para factura escribe RUT y razón social.';
+ const tip=payTip(amount);
+ const pay={id:uid('p'),t:Date.now(),method:P.method,amount,tip,split:P.mode,doc:P.doc,rut:P.doc==='factura'?P.rut.trim():'',razon:P.doc==='factura'?P.razon.trim():''};
+ let items=o.items;
+ if(P.mode==='platillo')items=o.items.map((i,k)=>P.sel.includes(k)?{...i,paid:true}:i);
+ const patch={payments:[...(o.payments||[]),pay],items};
+ const remaining=accTotal(o)-accPaid(o)-amount;
+ if(remaining<=0){patch.status='pagada';patch.closedAt=Date.now();MS.view='recibo'}
+ MS.pay=null;
+ await Store.patch(o.id,patch);
+ if(remaining>0){MS.view='cuenta';toast(`Pago de ${CLP(amount)} registrado. Quedan ${CLP(remaining)}`)}
+ return'';
+}
+function payAmount(o){
+ const P=MS.pay,due=accDue(o);
+ if(P.amount!==''&&P.amount!=null&&!isNaN(+P.amount))return Math.max(0,Math.min(due,Math.round(+P.amount)));
+ return defAmount(o);
+}
+function defAmount(o){
+ const P=MS.pay,due=accDue(o);
+ if(P.mode==='platillo')return P.sel.reduce((a,k)=>{const i=o.items[k];return a+(i&&!i.voided&&!i.paid?i.price*i.qty:0)},0);
+ if(P.mode==='persona'||P.mode==='partes'){
+  const n=Math.max(1,+P.n||1),done=(o.payments||[]).filter(p=>p.split==='persona'||p.split==='partes').length,parts=n-done;
+  return parts<=1?due:Math.min(due,Math.ceil(due/parts));
+ }
+ return due;
+}
+function payTip(amount){const P=MS.pay;if(P.tipPct==='custom')return Math.max(0,Math.round(+P.tipCustom||0));return Math.round(amount*(+P.tipPct||0)/100)}
+
+/* ---------- vista: MESAS ---------- */
+const dot=k=>({libre:'ok',ocupada:'warn',cobrar:'bad'}[k]);
+function tileHTML(t,edit){
+ const a=acctOf(t.id),k=!a?'libre':a.status==='porcobrar'?'cobrar':'ocupada';
+ const srv=a?toServe(a).length:0;
+ const lbl={libre:'Libre',ocupada:'Ocupada',cobrar:'Por cobrar'}[k];
+ return`<button class="tt ${k} ${MS.etid===t.id&&edit?'sel':''}" data-tile="${esc(t.id)}" ${edit?'data-edit':''} style="left:${t.x}%;top:${t.y}%" aria-label="${esc(t.name)} ${lbl}">
+  <span class="tn">${esc(t.name)}</span><span class="ts">${t.seats} puestos</span>
+  <span class="tag ${dot(k)}">${lbl}</span>
+  ${a?`<span class="tm num">${mins(a.openedAt)} min · ${esc(a.waiter||'')}</span><b class="num">${CLP(accTotal(a))}</b>`:''}
+  ${srv?`<span class="srv">${srv} lista${srv>1?'s':''} para servir</span>`:''}
+ </button>`;
+}
+function vMesas(){
+ const T=tables();
+ const stt=T.map(t=>{const a=acctOf(t.id);return!a?'libre':a.status==='porcobrar'?'cobrar':'ocupada'});
+ const c=k=>stt.filter(x=>x===k).length;
+ const mos=mesas().filter(o=>o.kind==='mostrador'&&OPENACC.includes(o.status));
+ const et=MS.edit&&MS.etid?T.find(t=>t.id===MS.etid):null;
+ return`<div class="ph"><div><h1>Mesas</h1><div class="meta"><span>${dateTxt()}</span><span>${live()}</span></div></div>
+  <div class="acts"><button class="btn ghost sm" id="editSalon">${MS.edit?'Terminar edición':'Editar salón'}</button><button class="btn sm" id="newMostrador">${ico('plus')} Venta en mostrador</button></div></div>
+  <div class="pills"><span>Libres<b class="num">${c('libre')}</b></span><span>· Ocupadas<b class="num">${c('ocupada')}</b></span><span>· Por cobrar<b class="num">${c('cobrar')}</b></span><span>· Total ${T.length} mesas</span></div>
+  ${MS.edit?`<div class="note" style="background:var(--info-bg);color:var(--info);margin-bottom:12px">Modo edición: arrastra las mesas para ubicarlas (en pantallas grandes) y toca una para cambiar nombre o puestos.</div>`:''}
+  <div class="salon ${MS.edit?'editing':''}">${T.map(t=>tileHTML(t,MS.edit)).join('')||'<div class="empty"><b>Sin mesas</b><span>Agrega la primera con "Editar salón".</span></div>'}</div>
+  ${MS.edit?`<div class="panelbox" style="margin-top:14px"><div style="display:flex;gap:10px;flex-wrap:wrap;align-items:end">
+    <button class="btn sm" id="addTable">${ico('plus')} Agregar mesa</button>
+    ${et?`<div class="field" style="margin:0"><label for="et-name">Nombre</label><input class="inp" id="et-name" value="${esc(et.name)}" style="width:170px"></div>
+    <div class="field" style="margin:0"><label for="et-seats">Puestos</label><input class="inp" id="et-seats" inputmode="numeric" value="${et.seats}" style="width:90px"></div>
+    <button class="btn ghost sm" id="saveTable">Guardar</button><button class="lnk bad" id="delTable">Eliminar mesa</button>`:'<span style="color:var(--muted)">Toca una mesa para editarla.</span>'}
+  </div></div>`:''}
+  ${mos.length?`<div class="grp">Cuentas de mostrador</div><div style="display:flex;gap:10px;flex-wrap:wrap">${mos.map(o=>`<button class="btn ghost sm" data-acct="${o.id}">${esc(o.label)} · ${CLP(accTotal(o))}${o.status==='porcobrar'?' · por cobrar':''}</button>`).join('')}</div>`:''}`;
+}
+
+/* ---------- modal de mesa ---------- */
+function openTable(tid){MS.open=true;MS.tid=tid;const a=acctOf(tid);MS.aid=a?a.id:null;MS.view='cuenta';MS.tab='cuenta';MS.cart=[];MS.note='';MS.pay=null;renderModal()}
+function openAcct(id){MS.open=true;MS.aid=id;MS.tid=null;MS.view='cuenta';MS.tab='cuenta';MS.cart=[];MS.note='';MS.pay=null;renderModal()}
+function closeModal(){MS.open=false;MS.aid=null;MS.tid=null;MS.view='cuenta';MS.pay=null;$('#overlay').innerHTML=''}
+function renderModal(){
+ if(!MS.open)return;
+ const o=MS.aid?Store.orders.find(x=>x.id===MS.aid):null;
+ let inner='';
+ if(!o){if(MS.tid)inner=openFormView();else return closeModal()}
+ else if(MS.view==='recibo')inner=reciboView(o);
+ else if(!OPENACC.includes(o.status))return closeModal();
+ else inner=MS.view==='cobro'?cobroView(o):cuentaView(o);
+ $('#overlay').innerHTML=`<div class="scrim" id="mscrim"></div><div class="modal wide" role="dialog" aria-modal="true">${inner}</div>`;
+}
+function openFormView(){
+ const t=tables().find(x=>x.id===MS.tid);if(!MS.form.waiter)MS.form.waiter=waiters()[0];
+ return`<div class="mh"><div><h2>${esc(t?t.name:'Mesa')}</h2><span style="color:var(--muted)">Libre · ${t?t.seats:''} puestos</span></div><button class="icon-btn" data-mclose aria-label="Cerrar">${ico('x')}</button></div>
+ <div class="row2"><div class="field"><label for="of-g">Comensales</label><input class="inp" id="of-g" inputmode="numeric" value="${MS.form.guests}"></div>
+ <div class="field"><label for="of-w">Mesero</label><select class="inp" id="of-w">${waiters().map(w=>`<option ${w===MS.form.waiter?'selected':''}>${esc(w)}</option>`).join('')}</select></div></div>
+ <button class="btn" id="doOpen" style="width:100%">Abrir mesa y tomar pedido</button>`;
+}
+function comanderoHTML(o){
+ const sec=MENU.find(s=>s.id===MS.cat)||MENU[0];
+ const ct=MS.cart;const tot=ct.reduce((a,i)=>a+i.price*i.qty,0);
+ return`<div class="cmd"><div class="chips">${MENU.map(s=>`<button class="chip ${s.id===sec.id?'on':''}" data-mcat="${s.id}">${esc(s.title.replace('Sánguches Tradicionales de Siempre','Sánguches').replace('Clásicas de la Casa','Clásicas').replace('Especiales del Maestro','Maestro').replace('Los Especiales de Autor','De autor'))}</button>`).join('')}</div>
+  <div class="plist">${sec.items.map(it=>{const out=(Store.settings.unavail||[]).includes(it.id);return`<div class="pr ${out?'out':''}"><div><b>${esc(it.name)}</b>${out?' <span class="tag bad">Agotado</span>':''}</div>
+   <div class="pb">${it.kind==='pizza'?SIZES.map((z,i)=>`<button class="mini" ${out?'disabled':''} data-madd="${it.id}" data-v="${z.k}"><small>${z.n.slice(0,3)}</small>${CLP(it.prices[i])}</button>`).join(''):`${it.choose?`<span class="prot">${['Mechada','Pollo'].map(p=>`<button data-mprot="${it.id}" data-p="${p}" class="${(MS.prot[it.id]||'Mechada')===p?'on':''}">${p}</button>`).join('')}</span>`:''}<button class="mini" ${out?'disabled':''} data-madd="${it.id}">${CLP(it.price)}</button>`}</div></div>`}).join('')}</div>
+  <div class="cartbox"><b>Por enviar a cocina</b>${ct.length?ct.map(c=>`<div class="line2"><span>${c.qty}× ${esc(c.name)} <em>${esc(c.variant)}</em></span><span class="qty"><button data-mq="${esc(c.key)}" data-d="-1" aria-label="Quitar">${ico('minus')}</button><span class="num">${c.qty}</span><button data-mq="${esc(c.key)}" data-d="1" aria-label="Agregar">${ico('plus')}</button></span></div>`).join('')+`<input class="inp" id="m-note" placeholder="Nota para cocina (sin cebolla, etc.)" value="${esc(MS.note)}"><button class="btn tomato" data-msend>Enviar a cocina · ${CLP(tot)}</button>`:'<span style="color:var(--muted)">Agrega productos de la carta.</span>'}</div></div>`;
+}
+function cuentaView(o){
+ const rs=roundsOf(o),total=accTotal(o),paid=accPaid(o),due=accDue(o);
+ const T=tables(),free=T.filter(t=>!acctOf(t.id)&&t.id!==o.table),occ=mesas().filter(x=>OPENACC.includes(x.status)&&x.id!==o.id);
+ return`<div class="mh"><div><h2>${esc(srcName(o))}</h2><div class="tags"><span class="tag ${o.status==='porcobrar'?'bad':'warn'}">${o.status==='porcobrar'?'Cuenta pedida':'Abierta'}</span><span class="tag">${o.guests||1} comensales</span><span class="tag">${esc(o.waiter||'')}</span><span class="tag num">hace ${mins(o.openedAt)} min</span></div></div><button class="icon-btn" data-mclose aria-label="Cerrar">${ico('x')}</button></div>
+ <div class="mtabs"><button class="${MS.tab==='cuenta'?'on':''}" data-mtab="cuenta">Cuenta</button><button class="${MS.tab==='carta'?'on':''}" data-mtab="carta">Agregar pedido${MS.cart.length?` (${MS.cart.length})`:''}</button></div>
+ <div class="mgrid"><section class="${MS.tab==='cuenta'?'':'mhid'}"><h3 class="sh">Cuenta</h3>
+  ${rs.length?rs.map(([rid,its])=>{const ready=its.every(i=>i.ready),served=its.every(i=>i.served);return`<div class="rnd"><div class="rh"><b>Ronda ${rid}</b><span class="tag ${served?'ok':ready?'info':'warn'}">${served?'Servida':ready?'Lista · llevar a la mesa':'En cocina'}</span>${ready&&!served?`<button class="btn sm" data-mserve="${rid}">Marcar servida</button>`:''}</div>
+   ${its.map(i=>{const k=o.items.indexOf(i);return`<div class="ri"><span>${i.qty}× ${esc(i.name)} <em>${esc(i.variant)}</em>${i.note?`<small> · ${esc(i.note)}</small>`:''}${i.paid?' <span class="tag ok">pagado</span>':''}${i.ready&&!i.served?' <span class="tag info">listo</span>':''}</span><b class="num">${CLP(i.price*i.qty)}</b>${i.paid?'<span></span>':`<button class="lnk bad" data-mvoid="${k}">Anular</button>`}</div>`}).join('')}</div>`}).join(''):'<div class="empty"><span>Aún no hay pedidos en esta cuenta. Agrega desde la carta.</span></div>'}
+  <div class="sum"><div><span>Total consumo</span><span class="num">${CLP(total)}</span></div>${paid?`<div><span>Pagado</span><span class="num">${CLP(paid)}</span></div>`:''}<div class="tot"><span>Por pagar</span><span class="num">${CLP(due)}</span></div></div>
+  <div class="macts">${o.status==='abierta'?`<button class="btn ghost sm" data-mbill ${total?'':'disabled'}>Pedir cuenta</button>`:''}<button class="btn sm" data-mcobro ${due?'':'disabled'}>Cobrar</button></div>
+  ${o.kind!=='mostrador'?`<div class="macts2"><div><label class="lbl" for="mv-sel">Mover a mesa libre</label><div class="inl"><select class="inp" id="mv-sel"><option value="">Elegir…</option>${free.map(t=>`<option value="${esc(t.id)}">${esc(t.name)}</option>`).join('')}</select><button class="btn ghost sm" data-mmove>Mover</button></div></div>
+   <div><label class="lbl" for="jn-sel">Unir con otra cuenta</label><div class="inl"><select class="inp" id="jn-sel"><option value="">Elegir…</option>${occ.map(x=>`<option value="${x.id}">${esc(srcName(x))} · ${CLP(accTotal(x))}</option>`).join('')}</select><button class="btn ghost sm" data-mjoin>Unir</button></div></div></div>`:''}
+  ${!litems(o).length&&!(o.payments||[]).length?`<button class="lnk bad" data-mdiscard>Cerrar sin consumo</button>`:''}
+ </section>
+ <section class="${MS.tab==='carta'?'':'mhid'}"><h3 class="sh">Tomar pedido</h3>${comanderoHTML(o)}</section></div>`;
+}
+function cobroView(o){
+ if(!MS.pay)MS.pay={mode:'total',n:o.guests||2,sel:[],amount:'',tipPct:10,tipCustom:'',method:'efectivo',given:'',doc:'boleta',rut:'',razon:'',err:''};
+ const P=MS.pay,due=accDue(o),amount=Math.min(due,payAmount(o)),tip=payTip(amount),totalPay=amount+tip;
+ const unpaid=o.items.map((i,k)=>({i,k})).filter(x=>!x.i.voided&&!x.i.paid);
+ const vuelto=P.method==='efectivo'&&+P.given?Math.max(0,Math.round(+P.given)-totalPay):0;
+ return`<div class="mh"><div><h2>Cobrar · ${esc(srcName(o))}</h2><span style="color:var(--muted)">Por pagar ${CLP(due)} de ${CLP(accTotal(o))}</span></div><button class="icon-btn" data-mclose aria-label="Cerrar">${ico('x')}</button></div>
+ <div class="field"><span class="lbl">¿Cómo se divide?</span><div class="seg">${[['total','Toda la cuenta'],['persona','Por persona'],['partes','Por partes'],['platillo','Por platillo']].map(([k,n])=>`<button data-pmode="${k}" class="${P.mode===k?'on':''}">${n}</button>`).join('')}</div></div>
+ ${P.mode==='persona'||P.mode==='partes'?`<div class="field"><label for="p-n">${P.mode==='persona'?'Personas':'Partes iguales'}</label><input class="inp" id="p-n" inputmode="numeric" value="${P.n}" style="width:110px"></div>`:''}
+ ${P.mode==='platillo'?`<div class="field"><span class="lbl">Elige los platillos de este pago</span>${unpaid.map(({i,k})=>`<label class="chk"><input type="checkbox" data-psel="${k}" ${P.sel.includes(k)?'checked':''}> ${i.qty}× ${esc(i.name)} <em>${esc(i.variant)}</em><b class="num">${CLP(i.price*i.qty)}</b></label>`).join('')||'<span style="color:var(--muted)">No quedan platillos por pagar.</span>'}</div>`:''}
+ <div class="row2"><div class="field"><label for="p-amt">Monto a cobrar</label><input class="inp" id="p-amt" inputmode="numeric" value="${P.amount!==''?esc(P.amount):amount}"></div>
+ <div class="field"><span class="lbl">Propina</span><div class="seg">${[[0,'0%'],[5,'5%'],[10,'10%']].map(([v,l])=>`<button data-ptip="${v}" class="${String(P.tipPct)===String(v)?'on':''}">${l}</button>`).join('')}<button data-ptip="custom" class="${P.tipPct==='custom'?'on':''}">Otra</button></div>${P.tipPct==='custom'?`<input class="inp" id="p-tip" inputmode="numeric" placeholder="Monto de propina" value="${esc(P.tipCustom)}">`:''}</div></div>
+ <div class="field"><span class="lbl">Método de pago</span><div class="seg">${[['efectivo','Efectivo'],['tarjeta','Tarjeta'],['transferencia','Transferencia']].map(([k,n])=>`<button data-pmeth="${k}" class="${P.method===k?'on':''}">${n}</button>`).join('')}</div></div>
+ ${P.method==='efectivo'?`<div class="field"><label for="p-given">Recibido en efectivo (opcional)</label><input class="inp" id="p-given" inputmode="numeric" value="${esc(P.given)}" style="width:170px">${vuelto?`<span class="tag ok" style="width:fit-content">Vuelto ${CLP(vuelto)}</span>`:''}</div>`:''}
+ <div class="field"><span class="lbl">Documento</span><div class="seg"><button data-pdoc="boleta" class="${P.doc==='boleta'?'on':''}">Boleta</button><button data-pdoc="factura" class="${P.doc==='factura'?'on':''}">Factura</button></div></div>
+ ${P.doc==='factura'?`<div class="row2"><div class="field"><label for="p-rut">RUT</label><input class="inp" id="p-rut" value="${esc(P.rut)}" placeholder="76.123.456-7"></div><div class="field"><label for="p-razon">Razón social</label><input class="inp" id="p-razon" value="${esc(P.razon)}"></div></div>`:''}
+ <div class="sum"><div><span>Consumo</span><span class="num">${CLP(amount)}</span></div><div><span>Propina</span><span class="num">${CLP(tip)}</span></div><div class="tot"><span>Total a cobrar</span><span class="num">${CLP(totalPay)}</span></div></div>
+ <p class="err" id="p-err" role="alert">${esc(P.err||'')}</p>
+ <div class="macts"><button class="btn ghost sm" data-mbackcuenta>Volver a la cuenta</button><button class="btn tomato" data-mpay>Registrar pago · ${CLP(totalPay)}</button></div>`;
+}
+function docNo(o){return(o.doc==='factura'?'F':'B')+'-'+String(Math.abs(hash(o.id))%90000+10000)}
+function hash(s){let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))|0;return h}
+function reciboText(o){
+ const ps=o.payments||[];const last=ps[ps.length-1]||{};
+ return[`Diego's Pizza · Diego Portales 161, Huépil`,`${last.doc==='factura'?'Factura':'Boleta'} ${docNo({id:o.id,doc:last.doc})} (demo, sin validez tributaria)`,`${srcName(o)} · ${new Date(o.closedAt||Date.now()).toLocaleString('es-CL')}`,'',...litems(o).map(i=>`${i.qty}× ${i.name} ${i.variant||''} ${CLP(i.price*i.qty)}`),'',`Consumo ${CLP(accTotal(o))}`,`Propina ${CLP(ps.reduce((a,p)=>a+(p.tip||0),0))}`,...ps.map(p=>`Pago ${PAYM[p.method]}: ${CLP(p.amount+(p.tip||0))}`)].join('\n');
+}
+function reciboView(o){
+ const ps=o.payments||[],tip=ps.reduce((a,p)=>a+(p.tip||0),0),last=ps[ps.length-1]||{};
+ return`<div class="mh"><div><div class="done-ico" style="width:52px;height:52px;margin-bottom:8px">${ico('check')}</div><h2>Cuenta pagada</h2><span style="color:var(--muted)">${esc(srcName(o))} quedó libre</span></div><button class="icon-btn" data-mclose aria-label="Cerrar">${ico('x')}</button></div>
+ <div class="rcp"><b>${last.doc==='factura'?'Factura':'Boleta'} ${docNo({id:o.id,doc:last.doc})}</b><span class="tag warn" style="width:fit-content">Demo sin validez tributaria</span>
+ ${last.doc==='factura'?`<span>${esc(last.razon)} · ${esc(last.rut)}</span>`:''}
+ ${litems(o).map(i=>`<div class="line2"><span>${i.qty}× ${esc(i.name)} <em>${esc(i.variant)}</em></span><span class="num">${CLP(i.price*i.qty)}</span></div>`).join('')}
+ <div class="sum"><div><span>Consumo</span><span class="num">${CLP(accTotal(o))}</span></div><div><span>Propina</span><span class="num">${CLP(tip)}</span></div>${ps.map(p=>`<div><span>${PAYM[p.method]} (${p.split==='total'?'cuenta':p.split==='platillo'?'platillos':'parte'})</span><span class="num">${CLP(p.amount+(p.tip||0))}</span></div>`).join('')}<div class="tot"><span>Total cobrado</span><span class="num">${CLP(accPaid(o)+tip)}</span></div></div></div>
+ <div class="macts"><button class="btn ghost sm" data-mcopy>Copiar resumen</button><button class="btn" data-mclose>Listo</button></div>`;
+}
+
+/* ---------- vista: COCINA (KDS) ---------- */
+function kdsTickets(st){
+ const T=[];
+ mesas().filter(o=>OPENACC.includes(o.status)).forEach(o=>roundsOf(o).forEach(([rid,its])=>{
+  const pend=its.filter(i=>!i.ready&&(!st||stOf(i)===st));
+  if(pend.length)T.push({key:o.id+'|'+rid,src:srcName(o),sub:'Ronda '+rid,t:Math.min(...its.map(i=>i.sentAt||o.openedAt)),items:pend,note:(its.find(i=>i.note)||{}).note||'',kind:o.kind==='mostrador'?'mostrador':'mesa'});
+ }));
+ web().filter(o=>o.status==='preparacion').forEach(o=>{
+  const pend=litems(o).filter(i=>!i.ready&&(!st||stOf(i)===st));
+  if(pend.length)T.push({key:o.id+'|0',src:(o.type==='delivery'?'Delivery #':'Retiro #')+o.num,sub:o.name,t:prepStart(o),items:pend,note:o.notes||'',kind:o.type});
+ });
+ return T.sort((a,b)=>a.t-b.t);
+}
+function vCocina(){
+ const all=kdsTickets(''),cs=k=>kdsTickets(k).length;
+ const T=kdsTickets(MS.kds);
+ return`<div class="ph"><div><h1>Cocina</h1><div class="meta"><span>Pantalla de comandas</span><span>${live()}</span><span>Alerta roja desde ${lateMin()} min</span></div></div></div>
+ <div class="tabs show" style="max-width:520px"><button data-kds="" class="${MS.kds===''?'on':''}"><b class="num">${all.length}</b>Todas</button><button data-kds="pizzas" class="${MS.kds==='pizzas'?'on':''}"><b class="num">${cs('pizzas')}</b>Pizzas</button><button data-kds="sanguches" class="${MS.kds==='sanguches'?'on':''}"><b class="num">${cs('sanguches')}</b>Sánguches</button></div>
+ ${T.length?`<div class="kds">${T.map(k=>{const m=mins(k.t),late=m>=lateMin();return`<article class="ticket ${late?'late':''}"><div class="kh"><div><b>${esc(k.src)}</b><span>${esc(k.sub)}</span></div><span class="kt num" data-ts="${k.t}">${m} min</span></div>
+  <ul>${k.items.map(i=>`<li><b>${i.qty}×</b> ${esc(i.name)} <em>${esc(i.variant)}</em>${MS.kds===''?`<small class="stn">${STN[stOf(i)]}</small>`:''}</li>`).join('')}</ul>
+  ${k.note?`<div class="nt">${esc(k.note)}</div>`:''}
+  <button class="btn" data-kdone="${esc(k.key)}">Listo${MS.kds?` · ${STN[MS.kds]}`:''}</button></article>`}).join('')}</div>`
+ :`<div class="empty" style="margin-top:8px"><div class="circ">${ico('flame')}</div><b>Cocina al día</b><span>Las comandas de mesas, mostrador y pedidos web en preparación aparecen aquí. Al marcar "Listo" avisamos al mesero.</span></div>`}`;
+}
+
+/* ---------- vista: COBROS ---------- */
+function shiftNow(){const s=Store.settings.shift;return s&&s.open?s:null}
+function shiftSummary(s){
+ const rows=salesIn(s.openedAt,Date.now());
+ const by={};['efectivo','tarjeta','transferencia','local'].forEach(m=>by[m]=sumBy(rows.filter(r=>r.method===m),r=>r.amount));
+ const tips=sumBy(rows,r=>r.tip),cashTips=sumBy(rows.filter(r=>r.method==='efectivo'),r=>r.tip);
+ const expected=(s.fondo||0)+by.efectivo+cashTips;
+ return{rows,by,tips,sales:sumBy(rows,r=>r.amount),expected};
+}
+function vCobros(){
+ const s=shiftNow(),por=mesas().filter(o=>o.status==='porcobrar'),ab=mesas().filter(o=>o.status==='abierta'&&accDue(o)>0&&litems(o).length);
+ const sm=s?shiftSummary(s):null;
+ const prev=(Store.settings.shifts||[]).slice(0,5);
+ const counted=+MS.counted||0,diff=sm?counted-sm.expected:0;
+ return`<div class="ph"><div><h1>Cobros</h1><div class="meta"><span>${dateTxt()}</span><span>${live()}</span></div></div></div>
+ <div class="panelbox"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center"><div><h3 style="margin:0">Caja ${s?'abierta':'cerrada'}</h3><span style="color:var(--muted)">${s?`Desde ${hhmm(s.openedAt)} · fondo inicial ${CLP(s.fondo)}`:'Abre la caja para registrar el efectivo del turno.'}</span></div><span class="tag ${s?'ok':'bad'}">${s?'Turno en curso':'Sin turno'}</span></div>
+ ${s?`<div class="stats" style="margin:14px 0 0"><div class="st"><div class="k">Ventas del turno</div><div class="v num">${CLP(sm.sales)}</div><div class="s">${sm.rows.length} cobros</div></div><div class="st"><div class="k">Propinas</div><div class="v num">${CLP(sm.tips)}</div><div class="s">aparte de las ventas</div></div><div class="st"><div class="k">Efectivo esperado</div><div class="v num">${CLP(sm.expected)}</div><div class="s">fondo + efectivo + propinas</div></div><div class="st"><div class="k">Tarjeta / Transf.</div><div class="v num" style="font-size:1.35rem">${CLP(sm.by.tarjeta)} / ${CLP(sm.by.transferencia)}</div><div class="s">pago en local ${CLP(sm.by.local)}</div></div></div>
+ ${MS.corte?`<div class="corte"><h3>Corte de caja</h3><div class="row2"><div class="field"><label for="c-counted">Efectivo contado</label><input class="inp" id="c-counted" inputmode="numeric" value="${esc(MS.counted)}"></div><div class="field"><span class="lbl">Diferencia</span><b id="c-diff" class="num ${diff<0?'bad':''}" style="font-size:1.4rem">${MS.counted===''?'—':(diff>0?'+':'')+CLP(diff)}</b></div></div><div class="field"><label for="c-note">Observación (opcional)</label><input class="inp" id="c-note" value="${esc(MS.cnote)}"></div><div class="macts"><button class="btn ghost sm" id="corteCancel">Cancelar</button><button class="btn" id="corteSave">Cerrar caja y guardar corte</button></div></div>`:`<div class="macts" style="margin-top:14px"><button class="btn" id="corteOpen">Hacer corte de caja</button></div>`}`
+ :`<div class="row2" style="margin-top:14px;align-items:end"><div class="field" style="margin:0"><label for="c-fondo">Efectivo inicial en caja</label><input class="inp" id="c-fondo" inputmode="numeric" value="${esc(MS.fondo)}" placeholder="Ej: 20000"></div><button class="btn" id="shiftOpen">Abrir caja</button></div>`}</div>
+ <div class="grp">Cuentas por cobrar</div>
+ ${por.length||ab.length?`<div class="panelbox" style="padding-block:4px">${[...por,...ab].map(o=>`<div class="mrow"><div><h4>${esc(srcName(o))} ${o.status==='porcobrar'?'<span class="tag bad">Cuenta pedida</span>':'<span class="tag warn">Abierta</span>'}</h4><small>${esc(o.waiter||'')} · ${o.guests||1} comensales · hace ${mins(o.openedAt)} min</small></div><div style="display:flex;gap:10px;align-items:center"><b class="num">${CLP(accDue(o))}</b><button class="btn sm" data-cobrar="${o.id}">Cobrar</button></div></div>`).join('')}</div>`:`<div class="empty"><span>No hay cuentas pendientes de cobro.</span></div>`}
+ ${s?`<div class="grp">Cobros del turno</div><div class="panelbox scroll-x" style="padding:6px 10px"><table class="tbl"><thead><tr><th>Hora</th><th>Origen</th><th>Método</th><th class="r">Monto</th><th class="r">Propina</th></tr></thead><tbody>${sm.rows.slice(0,12).map(r=>`<tr><td>${hhmm(r.t)}</td><td>${esc(r.label)} <span style="color:var(--muted)">· ${r.ch}</span></td><td>${PAYM[r.method]||r.method}</td><td class="r num">${CLP(r.amount)}</td><td class="r num">${r.tip?CLP(r.tip):'—'}</td></tr>`).join('')||'<tr><td colspan="5" style="color:var(--muted)">Aún no hay cobros en este turno.</td></tr>'}</tbody></table></div>`:''}
+ ${prev.length?`<div class="grp">Cortes anteriores</div><div class="panelbox scroll-x" style="padding:6px 10px"><table class="tbl"><thead><tr><th>Fecha</th><th class="r">Ventas</th><th class="r">Esperado</th><th class="r">Contado</th><th class="r">Diferencia</th></tr></thead><tbody>${prev.map(c=>`<tr><td>${new Date(c.closedAt).toLocaleString('es-CL',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})}</td><td class="r num">${CLP(c.sales)}</td><td class="r num">${CLP(c.expected)}</td><td class="r num">${CLP(c.counted)}</td><td class="r num">${c.diff>0?'+':''}${CLP(c.diff)}</td></tr>`).join('')}</tbody></table></div>`:''}`;
+}
+async function openShift(){const f=Math.max(0,Math.round(+MS.fondo||0));await Store.setSettings({shift:{open:true,openedAt:Date.now(),fondo:f,by:'Dueño'}});MS.fondo='';toast('Caja abierta')}
+async function closeShift(){
+ const s=shiftNow();if(!s)return;const sm=shiftSummary(s),counted=Math.round(+MS.counted||0);
+ const rec={openedAt:s.openedAt,closedAt:Date.now(),fondo:s.fondo,sales:sm.sales,tips:sm.tips,by:sm.by,expected:sm.expected,counted,diff:counted-sm.expected,note:MS.cnote.trim()};
+ await Store.setSettings({shift:{open:false,openedAt:0,fondo:0,by:''},shifts:[rec,...(Store.settings.shifts||[])].slice(0,20)});
+ MS.corte=false;MS.counted='';MS.cnote='';toast('Corte guardado y caja cerrada');
+}
+
+/* ---------- eventos de mesas, cocina y caja ---------- */
+let drag=null;
+document.addEventListener('pointerdown',e=>{
+ const t=e.target.closest('.tt[data-edit]');if(!t||!MS.edit)return;const map=$('.salon');if(!map||getComputedStyle(t).position!=='absolute')return;
+ drag={id:t.dataset.tile,el:t,r:map.getBoundingClientRect(),sx:e.clientX,sy:e.clientY,moved:false,ox:parseFloat(t.style.left),oy:parseFloat(t.style.top)};
+ try{t.setPointerCapture(e.pointerId)}catch(x){}
+});
+document.addEventListener('pointermove',e=>{
+ if(!drag)return;const dx=e.clientX-drag.sx,dy=e.clientY-drag.sy;if(!drag.moved&&Math.hypot(dx,dy)<6)return;drag.moved=true;
+ drag.x=Math.min(84,Math.max(0,drag.ox+dx/drag.r.width*100));drag.y=Math.min(76,Math.max(0,drag.oy+dy/drag.r.height*100));
+ drag.el.style.left=drag.x+'%';drag.el.style.top=drag.y+'%';
+});
+document.addEventListener('pointerup',async()=>{
+ if(!drag)return;const d=drag;drag=null;
+ if(d.moved){MS.justDragged=true;setTimeout(()=>MS.justDragged=false,80);await Store.setSettings({tables:tables().map(t=>t.id===d.id?{...t,x:Math.round(d.x*10)/10,y:Math.round(d.y*10)/10}:t)})}
+});
+document.addEventListener('click',async e=>{
+ if($('#panel').hidden||!PS.auth)return;
+ const g=s=>e.target.closest(s);
+ let b;
+ if(g('#editSalon')){MS.edit=!MS.edit;MS.etid=null;renderView();return}
+ if(g('#newMostrador')){const o=await openAccount(null,1,'Caja','mostrador');openAcct(o.id);return}
+ if((b=g('[data-tile]'))){if(MS.justDragged)return;if(MS.edit){MS.etid=b.dataset.tile;renderView()}else openTable(b.dataset.tile);return}
+ if((b=g('[data-acct]'))){openAcct(b.dataset.acct);return}
+ if(g('#addTable')){const T=tables(),n=T.length+1;await Store.setSettings({tables:[...T,{id:'t'+Date.now().toString(36),name:'Mesa '+n,seats:4,x:Math.min(80,(T.length%5)*18+4),y:Math.min(70,Math.floor(T.length/5)*28+8)}]});return}
+ if(g('#saveTable')&&MS.etid){const nm=($('#et-name').value||'').trim()||'Mesa',st=Math.max(1,Math.min(30,parseInt($('#et-seats').value)||4));await Store.setSettings({tables:tables().map(t=>t.id===MS.etid?{...t,name:nm,seats:st}:t)});toast('Mesa guardada');return}
+ if(g('#delTable')&&MS.etid){if(acctOf(MS.etid)){toast('La mesa tiene una cuenta abierta');return}await Store.setSettings({tables:tables().filter(t=>t.id!==MS.etid)});MS.etid=null;return}
+ /* modal */
+ if(g('[data-mclose]')||g('#mscrim')){if($('.modal.wide'))closeModal();return}
+ if(g('#doOpen')){const gs=Math.max(1,parseInt($('#of-g').value)||2),w=$('#of-w').value;MS.form={guests:gs,waiter:w};const o=await openAccount(MS.tid,gs,w);MS.aid=o.id;MS.tab='carta';renderModal();return}
+ if(!$('.modal.wide'))return;
+ const o=MS.aid?Store.orders.find(x=>x.id===MS.aid):null;
+ if((b=g('[data-mtab]'))){MS.tab=b.dataset.mtab;renderModal();return}
+ if((b=g('[data-mcat]'))){MS.cat=b.dataset.mcat;renderModal();return}
+ if((b=g('[data-mprot]'))){MS.prot[b.dataset.mprot]=b.dataset.p;renderModal();return}
+ if((b=g('[data-madd]'))){const id=b.dataset.madd,it=ALL[id];const v=it.kind==='pizza'?b.dataset.v:(it.choose?(MS.prot[id]||'Mechada'):'');const n=mkItem(id,v,1),ex=MS.cart.find(c=>c.key===n.key);ex?ex.qty++:MS.cart.push(n);renderModal();return}
+ if((b=g('[data-mq]'))){const c=MS.cart.find(x=>x.key===b.dataset.mq);if(c){c.qty+=+b.dataset.d;if(c.qty<=0)MS.cart.splice(MS.cart.indexOf(c),1)}renderModal();return}
+ if(!o)return;
+ if(g('[data-msend]')){await sendRound(o);renderModal();return}
+ if((b=g('[data-mserve]'))){await serveRound(o,+b.dataset.mserve);renderModal();return}
+ if((b=g('[data-mvoid]'))){await voidItem(o,+b.dataset.mvoid);toast('Producto anulado');renderModal();return}
+ if(g('[data-mbill]')){await Store.patch(o.id,{status:'porcobrar',requestedAt:Date.now()});toast('Cuenta pedida: aparece en Cobros');renderModal();return}
+ if(g('[data-mcobro]')){MS.view='cobro';MS.pay=null;renderModal();return}
+ if(g('[data-mmove]')){const v=$('#mv-sel').value;if(!v)return;await Store.patch(o.id,{table:v});toast(`Cuenta movida a ${tname(v)}`);MS.tid=v;renderModal();return}
+ if(g('[data-mjoin]')){const v=$('#jn-sel').value,other=Store.orders.find(x=>x.id===v);if(!other)return;await mergeInto(o,other);toast(`Unida con ${srcName(other)}`);renderModal();return}
+ if(g('[data-mdiscard]')){await Store.patch(o.id,{status:'cancelado',closedAt:Date.now()});closeModal();return}
+ if(g('[data-mbackcuenta]')){MS.view='cuenta';renderModal();return}
+ if((b=g('[data-pmode]'))){MS.pay.mode=b.dataset.pmode;MS.pay.amount='';MS.pay.sel=[];renderModal();return}
+ if((b=g('[data-ptip]'))){MS.pay.tipPct=b.dataset.ptip==='custom'?'custom':+b.dataset.ptip;renderModal();return}
+ if((b=g('[data-pmeth]'))){MS.pay.method=b.dataset.pmeth;renderModal();return}
+ if((b=g('[data-pdoc]'))){MS.pay.doc=b.dataset.pdoc;renderModal();return}
+ if((b=g('[data-psel]'))){const k=+b.dataset.psel,s=MS.pay.sel;b.checked?s.push(k):s.splice(s.indexOf(k),1);MS.pay.amount='';renderModal();return}
+ if(g('[data-mpay]')){const err=await registerPayment(o);if(err){MS.pay.err=err}renderModal();return}
+ if(g('[data-mcopy]')){copyText(reciboText(o));return}
+});
+document.addEventListener('click',async e=>{
+ if($('#panel').hidden||!PS.auth)return;const g=s=>e.target.closest(s);let b;
+ if((b=g('[data-kds]'))){MS.kds=b.dataset.kds;renderView();return}
+ if((b=g('[data-kdone]'))){await kdsDone(b.dataset.kdone,MS.kds);return}
+ if((b=g('[data-cobrar]'))){const o=Store.orders.find(x=>x.id===b.dataset.cobrar);if(!o)return;MS.open=true;MS.aid=o.id;MS.tid=null;MS.view='cobro';MS.pay=null;MS.cart=[];renderModal();return}
+ if(g('#shiftOpen')){await openShift();return}
+ if(g('#corteOpen')){MS.corte=true;renderView();return}
+ if(g('#corteCancel')){MS.corte=false;renderView();return}
+ if(g('#corteSave')){await closeShift();return}
+});
+document.addEventListener('input',e=>{
+ const id=e.target.id;if(!id)return;
+ if(id==='m-note')MS.note=e.target.value;
+ if(MS.pay&&$('.modal.wide')){
+  const P=MS.pay;
+  if(id==='p-amt'){P.amount=e.target.value.replace(/\D/g,'');P.err='';refreshTotals()}
+  if(id==='p-n'){P.n=e.target.value.replace(/\D/g,'');P.amount='';renderModalKeepFocus(id)}
+  if(id==='p-tip'){P.tipCustom=e.target.value.replace(/\D/g,'');refreshTotals()}
+  if(id==='p-given'){P.given=e.target.value.replace(/\D/g,'');renderModalKeepFocus(id)}
+  if(id==='p-rut')P.rut=e.target.value;
+  if(id==='p-razon')P.razon=e.target.value;
+ }
+ if(id==='c-fondo')MS.fondo=e.target.value.replace(/\D/g,'');
+ if(id==='c-counted'){MS.counted=e.target.value.replace(/\D/g,'');const s=shiftNow();if(s){const d=(+MS.counted||0)-shiftSummary(s).expected;const el=$('#c-diff');if(el){el.textContent=MS.counted===''?'—':(d>0?'+':'')+CLP(d);el.classList.toggle('bad',d<0)}}}
+ if(id==='c-note')MS.cnote=e.target.value;
+});
+function renderModalKeepFocus(id){
+ const el=$('#'+id),pos=el&&el.selectionStart;renderModal();
+ const n=$('#'+id);if(n){n.focus();try{n.setSelectionRange(pos,pos)}catch(x){}}
+}
+function refreshTotals(){renderModalKeepFocus(document.activeElement&&document.activeElement.id||'p-amt')}
+document.addEventListener('change',e=>{
+ if(e.target.id==='s-kds')Store.setSettings({kdsLate:Math.max(1,Math.min(120,parseInt(e.target.value)||15))});
+ if(e.target.id==='s-waiters')Store.setSettings({waiters:e.target.value.split(',').map(x=>x.trim()).filter(Boolean).slice(0,20)});
+});
+
+/* aviso al mesero cuando una ronda queda lista */
+function announceReady(list){
+ const keys=new Set();
+ list.filter(o=>o.type==='mesa'&&OPENACC.includes(o.status)).forEach(o=>{const m=new Map();(o.items||[]).filter(i=>!i.voided).forEach(i=>{const r=i.rid||1;if(!m.has(r))m.set(r,[]);m.get(r).push(i)});m.forEach((its,r)=>{if(its.every(i=>i.ready)&&!its.every(i=>i.served))keys.add(o.id+'|'+r+'|'+srcName(o))})});
+ if(PS.rseen==null){if(list.length)PS.rseen=keys;return}
+ keys.forEach(k=>{if(!PS.rseen.has(k)){const [,r,n]=k.split('|');if(PS.auth&&!$('#panel').hidden){toast(`${n} · ronda ${r} lista para servir`);if(PS.sound)beep()}}});
+ PS.rseen=keys;
+}
+
 /* ---------- suscripciones ---------- */
 Store.onOrders(list=>{
+ announceReady(list);
  const ids=new Set(list.map(o=>o.id));
  if(PS.seen===null){PS.seen=ids}else{
   const added=list.filter(o=>!PS.seen.has(o.id)&&o.status==='nuevo'&&!o.demo&&o.createdAt>=loadedAt-5000);
@@ -814,12 +1288,12 @@ Store.onOrders(list=>{
   if(added.length&&PS.auth&&!$('#panel').hidden){toast(`Nuevo pedido #${added[0].num} · ${CLP(added[0].total)}`);if(PS.sound)beep()}
   PS.seen=ids;
  }
- if(!$('#panel').hidden&&PS.auth){const ae=document.activeElement;if(!(ae&&/INPUT|TEXTAREA|SELECT/.test(ae.tagName)))renderPanel()}
+ if(!$('#panel').hidden&&PS.auth){const ae=document.activeElement;if(!(ae&&/INPUT|TEXTAREA|SELECT/.test(ae.tagName))){renderPanel();if(MS.open)renderModal()}}
  if(drawerOpen&&step==='done')renderDrawer();
  renderHead();
 });
 Store.onSettings(()=>{if(!$('#site').hidden){renderMenu();renderHead();if(drawerOpen&&step==='checkout'&&document.activeElement.tagName!=='INPUT')renderDrawer()}if(!$('#panel').hidden&&PS.auth&&!/INPUT/.test(document.activeElement.tagName))renderPanel()});
-setInterval(()=>{$$('.ago').forEach(el=>{const t=+el.dataset.ts;el.textContent=ago(t)})},30000);
+setInterval(()=>{$$('.ago').forEach(el=>{const t=+el.dataset.ts;el.textContent=ago(t)});$$('.kt').forEach(el=>{const t=+el.dataset.ts,m=mins(t);el.textContent=m+' min';const tk=el.closest('.ticket');if(tk)tk.classList.toggle('late',m>=lateMin())});if(PS.auth&&!$('#panel').hidden&&['mesas','cobros'].includes(PS.nav)&&!MS.open&&!MS.edit&&!/INPUT/.test((document.activeElement||{}).tagName||''))renderView()},15000);
 
 window.addEventListener('dp-401',()=>{if(!PS.auth)return;PS.auth=false;SS.del('dp.auth');if(!$('#panel').hidden)renderPanel()});
 /* ---------- router ---------- */
